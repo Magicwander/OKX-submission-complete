@@ -1,0 +1,19 @@
+{
+  "name": "okx-dex-api-module",
+  "version": "1.0.0",
+  "description": "A module to interact with OKX DEX API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "example": "node example.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": ["okx", "dex", "api", "crypto", "trading"],
+  "author": "openhands",
+  "license": "MIT"
+}
