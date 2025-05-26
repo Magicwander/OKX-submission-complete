@@ -1,0 +1,36 @@
+{
+  "name": "solana-keeper-service",
+  "version": "1.0.0",
+  "description": "Solana Keeper Service for periodic price updates with funded wallet transactions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-keeper.js",
+    "test-wallet": "node test-wallet.js",
+    "test-price-oracle": "node test-price-oracle.js",
+    "test-all": "node test-all.js",
+    "demo": "node demo.js"
+  },
+  "keywords": [
+    "solana",
+    "keeper",
+    "price-oracle",
+    "blockchain",
+    "defi",
+    "automated-trading"
+  ],
+  "author": "OKX Submission",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "@solana/spl-token": "^0.3.9",
+    "axios": "^1.6.0",
+    "decimal.js": "^10.4.3",
+    "bs58": "^5.0.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
