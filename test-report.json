@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-05-26T11:04:52.864Z",
+  "summary": {
+    "total": 17,
+    "passed": 13,
+    "failed": 4,
+    "successRate": "76%"
+  },
+  "details": [
+    {
+      "name": "OKX API Initialization",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Get BTC-USDT Ticker",
+      "passed": true,
+      "details": "Price: $109589.7"
+    },
+    {
+      "name": "Get Multiple Tickers",
+      "passed": true,
+      "details": "Received 3 tickers"
+    },
+    {
+      "name": "Get Order Book",
+      "passed": [
+        {
+          "price": 109589.7,
+          "size": 1.08963774,
+          "orders": 0,
+          "total": 21
+        },
+        {
+          "price": 109589.8,
+          "size": 0.01300129,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109589.9,
+          "size": 0.04260058,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109590,
+          "size": 0.03381,
+          "orders": 0,
+          "total": 2
+        },
+        {
+          "price": 109592,
+          "size": 0.0338,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109592.8,
+          "size": 0.02680781,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109593,
+          "size": 0.04758411,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109593.7,
+          "size": 0.00456006,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109593.8,
+          "size": 0.40740397,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109594,
+          "size": 0.0338,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109594.1,
+          "size": 0.111,
+          "orders": 0,
+          "total": 2
+        },
+        {
+          "price": 109594.2,
+          "size": 0.2684786,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109595.5,
+          "size": 0.00001,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109595.8,
+          "size": 0.00258962,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109595.9,
+          "size": 0.2527728,
+          "orders": 0,
+          "total": 3
+        },
+        {
+          "price": 109596,
+          "size": 0.0348,
+          "orders": 0,
+          "total": 2
+        },
+        {
+          "price": 109596.1,
+          "size": 0.28154,
+          "orders": 0,
+          "total": 4
+        },
+        {
+          "price": 109597.4,
+          "size": 0.03062015,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109597.7,
+          "size": 0.02828252,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109597.8,
+          "size": 0.03404578,
+          "orders": 0,
+          "total": 2
+        }
+      ],
+      "details": "Bids: 20, Asks: 20"
+    },
+    {
+      "name": "Get 24hr Statistics",
+      "passed": true,
+      "details": "Found 772 trading pairs"
+    },
+    {
+      "name": "Keeper Service Initialization",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Price Fetching",
+      "passed": true,
+      "details": "Fetched 3 prices"
+    },
+    {
+      "name": "Price Change Detection",
+      "passed": false,
+      "details": "First: true, Second: true"
+    },
+    {
+      "name": "Keeper Service Integration",
+      "passed": false,
+      "details": "Wallet not initialized"
+    },
+    {
+      "name": "PriceFeedAccount Tests",
+      "passed": {
+        "passedTests": 15,
+        "totalTests": 15
+      },
+      "details": "All 15 tests executed"
+    },
+    {
+      "name": "Update Price Instruction Tests",
+      "passed": false,
+      "details": "18 tests executed"
+    },
+    {
+      "name": "E2E: Fetch Real Price Data",
+      "passed": 109582.9,
+      "details": "BTC Price: $109582.9"
+    },
+    {
+      "name": "E2E: Process Through Keeper",
+      "passed": true,
+      "details": "Processed price: $109653.95"
+    },
+    {
+      "name": "End-to-End Workflow",
+      "passed": false,
+      "details": "Wallet not initialized"
+    },
+    {
+      "name": "API Response Time",
+      "passed": true,
+      "details": "206ms (target: <2000ms)"
+    },
+    {
+      "name": "Batch Price Fetching",
+      "passed": true,
+      "details": "215ms for 3 tokens (target: <3000ms)"
+    },
+    {
+      "name": "Memory Usage",
+      "passed": true,
+      "details": "Heap: 27MB"
+    }
+  ],
+  "environment": {
+    "nodeVersion": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64"
+  }
+}

@@ -50,6 +50,24 @@ class OKXDexAPI {
   }
 
   /**
+   * Get ticker data for multiple trading pairs
+   * @param {Array<string>} symbols - Array of trading pair symbols
+   * @returns {Promise<Array>} Array of ticker objects
+   */
+  async getTickers(symbols) {
+    try {
+      const promises = symbols.map(symbol => this.getTicker(symbol));
+      const results = await Promise.allSettled(promises);
+      
+      return results
+        .filter(result => result.status === 'fulfilled')
+        .map(result => result.value);
+    } catch (error) {
+      throw new Error(`Failed to fetch tickers: ${error.message}`);
+    }
+  }
+
+  /**
    * Get order book data for a specific trading pair
    * @param {string} instId - Trading pair (e.g., 'BTC-USDT')
    * @param {number} sz - Order book depth (default: 20, max: 400)

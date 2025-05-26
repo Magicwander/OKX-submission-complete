@@ -404,3 +404,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 }
 
 export default runTests;
+export { runTests as runPriceFeedAccountTests };
