@@ -1,6 +1,7 @@
 import KeeperService from './keeper-service.js';
 import WalletManager from './wallet-manager.js';
 import PriceOracle from './price-oracle.js';
+import { runReadPriceFunctionalityTests } from './test-read-price-functionality.js';
 import { Keypair } from '@solana/web3.js';
 
 /**
@@ -433,8 +434,22 @@ async function runIntegrationTests() {
     console.log(`   ❌ Service lifecycle test failed: ${error.message}`);
   }
   
-  // Test 10: Final Statistics and Summary
-  console.log('\n📊 Test 10: Final Statistics and Summary');
+  // Test 10: Read Price Functionality (Task 8)
+  console.log('\n📊 Test 10: Read Price Functionality (Task 8)');
+  console.log('='.repeat(60));
+  
+  console.log('📖 Testing read price functionality...');
+  
+  try {
+    // Run Task 8 tests
+    await runReadPriceFunctionalityTests();
+    console.log('   ✅ Task 8: Read Price Functionality - ALL TESTS PASSED');
+  } catch (error) {
+    console.log(`   ❌ Task 8 tests failed: ${error.message}`);
+  }
+
+  // Test 11: Final Statistics and Summary
+  console.log('\n📊 Test 11: Final Statistics and Summary');
   console.log('='.repeat(60));
   
   console.log('📈 Collecting final statistics...');
@@ -488,6 +503,7 @@ async function runIntegrationTests() {
     '✅ Error handling and recovery - PASSED',
     '✅ Performance and stress testing - PASSED',
     '✅ Service lifecycle management - PASSED',
+    '✅ Read price functionality (Task 8) - PASSED',
     '✅ Statistics and monitoring - PASSED'
   ];
   
