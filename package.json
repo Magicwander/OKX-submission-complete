@@ -10,10 +10,20 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.2",
     "axios": "^1.6.0",
+    "borsh": "^2.0.0",
+    "decimal.js": "^10.5.0",
     "dotenv": "^16.3.1"
   },
-  "keywords": ["okx", "dex", "api", "crypto", "trading"],
+  "keywords": [
+    "okx",
+    "dex",
+    "api",
+    "crypto",
+    "trading"
+  ],
   "author": "openhands",
   "license": "MIT"
 }

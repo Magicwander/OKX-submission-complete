@@ -97,6 +97,12 @@ async function testSolanaKeeperService() {
         };
         
         const keeper = new KeeperService(config);
+        
+        // Initialize with a test wallet
+        const { Keypair } = await import('@solana/web3.js');
+        const testWallet = Keypair.generate();
+        await keeper.initialize(testWallet);
+        
         logTest('Keeper Service Initialization', keeper !== null);
         
         // Test 2: Price fetching
@@ -190,6 +196,11 @@ async function testEndToEndWorkflow() {
             tokens: ['BTC/USDT'],
             sources: ['okx']
         });
+        
+        // Initialize with a test wallet
+        const { Keypair } = await import('@solana/web3.js');
+        const testWallet = Keypair.generate();
+        await keeper.initialize(testWallet);
         
         // Process price through keeper
         const prices = await keeper.fetchPrices();

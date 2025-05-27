@@ -32,11 +32,9 @@ class TestUtils {
     static createMockPriceFeedAccount(authority) {
         const account = new PriceFeedAccount();
         account.initialize(
-            'BTC',
-            'USDT',
-            8,
-            6,
-            authority.publicKey
+            { pairId: 'BTC/USDT', baseSymbol: 'BTC', quoteSymbol: 'USDT', baseDecimals: 8, quoteDecimals: 6 },
+            authority.publicKey,
+            new PublicKey('11111111111111111111111111111111') // System Program as oracle program
         );
         return account;
     }
@@ -121,13 +119,13 @@ async function runUpdatePriceInstructionTests() {
             instruction: 0,
             price: '45000.25',
             confidence: '0.90',
-            slot: 12345,
-            timestamp: 1640995200,
+            slot: 12345n,
+            timestamp: 1640995200n,
             sources: ['okx', 'coingecko']
         });
 
         const serialized = serialize(UPDATE_PRICE_INSTRUCTION_SCHEMA, instructionData);
-        const deserialized = deserialize(UPDATE_PRICE_INSTRUCTION_SCHEMA, UpdatePriceInstructionData, serialized);
+        const deserialized = deserialize(UPDATE_PRICE_INSTRUCTION_SCHEMA, serialized);
 
         if (deserialized.instruction !== 0) {
             throw new Error('Instruction type mismatch');
@@ -141,7 +139,7 @@ async function runUpdatePriceInstructionTests() {
             throw new Error('Confidence mismatch');
         }
         
-        if (deserialized.slot !== 12345) {
+        if (deserialized.slot !== 12345n) {
             throw new Error('Slot mismatch');
         }
         
@@ -182,7 +180,7 @@ async function runUpdatePriceInstructionTests() {
             instruction.validateInstructionParams(params);
             throw new Error('Should have thrown for negative price');
         } catch (error) {
-            if (!error.message.includes('INVALID_PRICE')) {
+            if (!error.message.includes('4098') && !error.message.includes('Price must be positive')) {
                 throw new Error('Wrong error type for invalid price');
             }
         }
@@ -204,7 +202,7 @@ async function runUpdatePriceInstructionTests() {
             instruction.validateInstructionParams(params);
             throw new Error('Should have thrown for invalid confidence');
         } catch (error) {
-            if (!error.message.includes('INVALID_CONFIDENCE')) {
+            if (!error.message.includes('4100') && !error.message.includes('Confidence must be between')) {
                 throw new Error('Wrong error type for invalid confidence');
             }
         }
@@ -226,7 +224,7 @@ async function runUpdatePriceInstructionTests() {
             instruction.validateInstructionParams(params);
             throw new Error('Should have thrown for stale data');
         } catch (error) {
-            if (!error.message.includes('PRICE_TOO_OLD')) {
+            if (!error.message.includes('4104') && !error.message.includes('Price data is too old')) {
                 throw new Error('Wrong error type for stale data');
             }
         }
@@ -279,14 +277,14 @@ async function runUpdatePriceInstructionTests() {
             throw new Error('Should have failed for unauthorized user');
         }
         
-        if (!result.error.includes('UNAUTHORIZED')) {
+        if (!result.error.includes('4097') && !result.error.includes('Invalid authority')) {
             throw new Error('Wrong error type for unauthorized access');
         }
     });
 
     // Test 9: Price Update Processing
     test('Price Update Processing', () => {
-        const oldPrice = mockAccount.currentPrice;
+        const oldPrice = mockAccount.currentPrice.price;
         
         const instructionData = new UpdatePriceInstructionData({
             instruction: 0,
@@ -307,11 +305,11 @@ async function runUpdatePriceInstructionTests() {
             throw new Error(`Price update failed: ${result.error}`);
         }
         
-        if (mockAccount.currentPrice.equals(oldPrice)) {
+        if (mockAccount.currentPrice.price.equals(oldPrice)) {
             throw new Error('Price was not updated');
         }
         
-        if (!mockAccount.currentPrice.equals(new Decimal('51000.75'))) {
+        if (!mockAccount.currentPrice.price.equals(new Decimal('51000.75'))) {
             throw new Error('Price not set correctly');
         }
     });

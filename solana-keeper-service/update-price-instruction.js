@@ -40,19 +40,16 @@ class UpdatePriceInstructionData {
 /**
  * Borsh schema for UpdatePriceInstructionData
  */
-const UPDATE_PRICE_INSTRUCTION_SCHEMA = new Map([
-    [UpdatePriceInstructionData, {
-        kind: 'struct',
-        fields: [
-            ['instruction', 'u8'],
-            ['price', 'string'],
-            ['confidence', 'string'],
-            ['slot', 'u64'],
-            ['timestamp', 'u64'],
-            ['sources', ['string']]
-        ]
-    }]
-]);
+const UPDATE_PRICE_INSTRUCTION_SCHEMA = {
+    struct: {
+        instruction: 'u8',
+        price: 'string',
+        confidence: 'string',
+        slot: 'u64',
+        timestamp: 'u64',
+        sources: { array: { type: 'string' } }
+    }
+};
 
 /**
  * Program Error Codes
@@ -293,12 +290,13 @@ class UpdatePriceInstruction {
             });
 
             // Update price data
-            const updateResult = account.updatePrice(
-                new Decimal(instructionData.price),
-                new Decimal(instructionData.confidence),
-                instructionData.sources,
-                instructionData.timestamp
-            );
+            const updateResult = account.updatePrice({
+                price: new Decimal(instructionData.price),
+                confidence: parseFloat(instructionData.confidence),
+                sources: instructionData.sources,
+                timestamp: instructionData.timestamp,
+                slot: instructionData.slot
+            });
 
             // Update slot information
             account.lastUpdateSlot = instructionData.slot;

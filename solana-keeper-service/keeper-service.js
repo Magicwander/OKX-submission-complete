@@ -411,6 +411,8 @@ export default class KeeperService {
     const lastPrice = this.lastPrices.get(token);
     
     if (!lastPrice) {
+      // Store the price for future comparisons
+      this.lastPrices.set(token, { price: newPriceData, timestamp: Date.now() });
       return true; // First time, always update
     }
     

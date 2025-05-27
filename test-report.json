@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-05-26T11:04:52.864Z",
+  "timestamp": "2025-05-27T06:42:50.962Z",
   "summary": {
     "total": 17,
-    "passed": 13,
-    "failed": 4,
-    "successRate": "76%"
+    "passed": 17,
+    "failed": 0,
+    "successRate": "100%"
   },
   "details": [
     {
@@ -15,7 +15,7 @@
     {
       "name": "Get BTC-USDT Ticker",
       "passed": true,
-      "details": "Price: $109589.7"
+      "details": "Price: $109170"
     },
     {
       "name": "Get Multiple Tickers",
@@ -26,122 +26,122 @@
       "name": "Get Order Book",
       "passed": [
         {
-          "price": 109589.7,
-          "size": 1.08963774,
+          "price": 109170,
+          "size": 0.06046338,
           "orders": 0,
-          "total": 21
+          "total": 6
         },
         {
-          "price": 109589.8,
-          "size": 0.01300129,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109589.9,
-          "size": 0.04260058,
+          "price": 109172,
+          "size": 0.0113,
           "orders": 0,
           "total": 1
         },
         {
-          "price": 109590,
-          "size": 0.03381,
+          "price": 109172.2,
+          "size": 0.01,
           "orders": 0,
           "total": 2
         },
         {
-          "price": 109592,
-          "size": 0.0338,
+          "price": 109172.3,
+          "size": 0.002,
           "orders": 0,
           "total": 1
         },
         {
-          "price": 109592.8,
-          "size": 0.02680781,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109593,
-          "size": 0.04758411,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109593.7,
-          "size": 0.00456006,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109593.8,
-          "size": 0.40740397,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109594,
-          "size": 0.0338,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109594.1,
-          "size": 0.111,
+          "price": 109174,
+          "size": 0.02045666,
           "orders": 0,
           "total": 2
         },
         {
-          "price": 109594.2,
-          "size": 0.2684786,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109595.5,
+          "price": 109174.2,
           "size": 0.00001,
           "orders": 0,
           "total": 1
         },
         {
-          "price": 109595.8,
-          "size": 0.00258962,
+          "price": 109175.9,
+          "size": 0.07,
           "orders": 0,
           "total": 1
         },
         {
-          "price": 109595.9,
-          "size": 0.2527728,
+          "price": 109176,
+          "size": 0.02784637,
           "orders": 0,
-          "total": 3
+          "total": 1
         },
         {
-          "price": 109596,
-          "size": 0.0348,
+          "price": 109176.7,
+          "size": 0.00130608,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109177.2,
+          "size": 0.06,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109177.3,
+          "size": 0.07124083,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109178.1,
+          "size": 0.02747926,
           "orders": 0,
           "total": 2
         },
         {
-          "price": 109596.1,
-          "size": 0.28154,
+          "price": 109178.2,
+          "size": 0.00471378,
+          "orders": 0,
+          "total": 2
+        },
+        {
+          "price": 109178.7,
+          "size": 0.03663967,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109179.4,
+          "size": 0.09159,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109180,
+          "size": 0.00039008,
+          "orders": 0,
+          "total": 3
+        },
+        {
+          "price": 109180.3,
+          "size": 0.07665664,
+          "orders": 0,
+          "total": 3
+        },
+        {
+          "price": 109181,
+          "size": 0.234,
+          "orders": 0,
+          "total": 1
+        },
+        {
+          "price": 109181.5,
+          "size": 0.60809216,
           "orders": 0,
           "total": 4
         },
         {
-          "price": 109597.4,
-          "size": 0.03062015,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109597.7,
-          "size": 0.02828252,
-          "orders": 0,
-          "total": 1
-        },
-        {
-          "price": 109597.8,
-          "size": 0.03404578,
+          "price": 109181.6,
+          "size": 0.09163582,
           "orders": 0,
           "total": 2
         }
@@ -151,7 +151,7 @@
     {
       "name": "Get 24hr Statistics",
       "passed": true,
-      "details": "Found 772 trading pairs"
+      "details": "Found 773 trading pairs"
     },
     {
       "name": "Keeper Service Initialization",
@@ -165,13 +165,13 @@
     },
     {
       "name": "Price Change Detection",
-      "passed": false,
-      "details": "First: true, Second: true"
+      "passed": true,
+      "details": "First: true, Second: false"
     },
     {
-      "name": "Keeper Service Integration",
-      "passed": false,
-      "details": "Wallet not initialized"
+      "name": "Transaction Creation",
+      "passed": true,
+      "details": "Instructions: 3"
     },
     {
       "name": "PriceFeedAccount Tests",
@@ -183,38 +183,229 @@
     },
     {
       "name": "Update Price Instruction Tests",
-      "passed": false,
+      "passed": true,
       "details": "18 tests executed"
     },
     {
       "name": "E2E: Fetch Real Price Data",
-      "passed": 109582.9,
-      "details": "BTC Price: $109582.9"
+      "passed": 109170,
+      "details": "BTC Price: $109170"
     },
     {
       "name": "E2E: Process Through Keeper",
       "passed": true,
-      "details": "Processed price: $109653.95"
+      "details": "Processed price: $109163"
     },
     {
-      "name": "End-to-End Workflow",
-      "passed": false,
-      "details": "Wallet not initialized"
+      "name": "E2E: Create Update Transaction",
+      "passed": [
+        {
+          "keys": [],
+          "programId": "ComputeBudget111111111111111111111111111111",
+          "data": [
+            2,
+            64,
+            13,
+            3,
+            0
+          ]
+        },
+        {
+          "keys": [],
+          "programId": "ComputeBudget111111111111111111111111111111",
+          "data": [
+            3,
+            232,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "keys": [
+            {
+              "pubkey": "Frtvca9z2urVfcdq5Rgm5avTnYQxW5361TjKvM37vSoQ",
+              "isSigner": true,
+              "isWritable": false
+            }
+          ],
+          "programId": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+          "data": [
+            123,
+            34,
+            97,
+            99,
+            116,
+            105,
+            111,
+            110,
+            34,
+            58,
+            34,
+            112,
+            114,
+            105,
+            99,
+            101,
+            95,
+            117,
+            112,
+            100,
+            97,
+            116,
+            101,
+            34,
+            44,
+            34,
+            116,
+            111,
+            107,
+            101,
+            110,
+            34,
+            58,
+            34,
+            66,
+            84,
+            67,
+            47,
+            85,
+            83,
+            68,
+            84,
+            34,
+            44,
+            34,
+            112,
+            114,
+            105,
+            99,
+            101,
+            34,
+            58,
+            34,
+            91,
+            111,
+            98,
+            106,
+            101,
+            99,
+            116,
+            32,
+            79,
+            98,
+            106,
+            101,
+            99,
+            116,
+            93,
+            34,
+            44,
+            34,
+            116,
+            105,
+            109,
+            101,
+            115,
+            116,
+            97,
+            109,
+            112,
+            34,
+            58,
+            49,
+            55,
+            52,
+            56,
+            51,
+            50,
+            56,
+            49,
+            55,
+            48,
+            53,
+            52,
+            52,
+            44,
+            34,
+            107,
+            101,
+            101,
+            112,
+            101,
+            114,
+            34,
+            58,
+            34,
+            70,
+            114,
+            116,
+            118,
+            99,
+            97,
+            57,
+            122,
+            50,
+            117,
+            114,
+            86,
+            102,
+            99,
+            100,
+            113,
+            53,
+            82,
+            103,
+            109,
+            53,
+            97,
+            118,
+            84,
+            110,
+            89,
+            81,
+            120,
+            87,
+            53,
+            51,
+            54,
+            49,
+            84,
+            106,
+            75,
+            118,
+            77,
+            51,
+            55,
+            118,
+            83,
+            111,
+            81,
+            34,
+            125
+          ]
+        }
+      ],
+      "details": "Transaction ready with 3 instructions"
     },
     {
       "name": "API Response Time",
       "passed": true,
-      "details": "206ms (target: <2000ms)"
+      "details": "209ms (target: <2000ms)"
     },
     {
       "name": "Batch Price Fetching",
       "passed": true,
-      "details": "215ms for 3 tokens (target: <3000ms)"
+      "details": "207ms for 3 tokens (target: <3000ms)"
     },
     {
       "name": "Memory Usage",
       "passed": true,
-      "details": "Heap: 27MB"
+      "details": "Heap: 25MB"
     }
   ],
   "environment": {
